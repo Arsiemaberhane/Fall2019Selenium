@@ -18,7 +18,7 @@ public class FindElementByID {
         Thread.sleep(3000);
 
         WebElement password = driver.findElement(By.name("Password"));
-        password.sendKeys("supersecretpassword");
+        password.sendKeys("SuperSecretPassword");
 
         driver.findElement(By.id("wooden_spoon")).click();
 
@@ -31,6 +31,12 @@ public class FindElementByID {
         }else {
             System.out.println("Test Failed");
         }
+        //Let's click on logout button. It looks like abutton, but it's actually a link.
+        //Every element with <a> tag is a link.
+
+        WebElement logout = driver.findElement(By.linkText("Logout"));
+        logout.click();
+        Thread.sleep(2000);
 
         driver.quit();
 
