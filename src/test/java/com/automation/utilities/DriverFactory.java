@@ -7,23 +7,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
-    //YOUR HOMEWORK WILL BE TO IMPROVE THIS METHOD.
-    /** This method return webdriver object based on browser type.
-     * if you want to use chrome browser, just provide chrome as a parameter.
+    /**
+     * This method return webdriver object based on browser type
+     * If you want to use chrome browser, just provide chrome as a parameter
+     *
      * @param browserName
-     * @return Webdriver object.
-     * **/
-
-    public static WebDriver createADriver(String browserName){
-        if (browserName.equalsIgnoreCase("chrome")){
+     * @return webdriver object
+     */
+    public static WebDriver createDriver(String browserName) {
+        if (browserName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
-        }else{WebDriverManager.firefoxdriver().setup();
-        return new FirefoxDriver();
-       }
-        WebDriver driver = DriverFactory.createADriver("chrome");
-
-
+        } else {
+            WebDriverManager.firefoxdriver().setup();
+            return new FirefoxDriver();
+        }
 
     }
 }
