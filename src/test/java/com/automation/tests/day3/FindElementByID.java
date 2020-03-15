@@ -31,10 +31,20 @@ public class FindElementByID {
         }else {
             System.out.println("Test Failed");
         }
-        //Let's click on logout button. It looks like abutton, but it's actually a link.
+        //Let's click on logout button. It looks like a button, but it's actually a link.
         //Every element with <a> tag is a link.
+        //if you have couple of spaces in the text, just use partial Link text instead of link text.
+        //LinkText - equals ()
+        //Partial Link Text - contains() - complete match isn't required.
+
 
         WebElement logout = driver.findElement(By.linkText("Logout"));
+
+        String href = logout.getAttribute( "href");
+        String classname = logout.getAttribute("class");
+
+        System.out.println(href);
+
         logout.click();
         Thread.sleep(2000);
 
