@@ -25,7 +25,4 @@ public class Assignment1 {
 
         driver.quit();
     }
-
-
-
 }
