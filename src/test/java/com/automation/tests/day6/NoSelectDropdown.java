@@ -1,4 +1,5 @@
 package com.automation.tests.day6;
+
 import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
@@ -7,9 +8,9 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class NoSelectDropDown {
-    public static void main(String[] args) {
+public class NoSelectDropdown {
 
+    public static void main(String[] args) {
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
 
@@ -28,6 +29,5 @@ public class NoSelectDropDown {
 
         BrowserUtils.wait(3);
         driver.quit();
-
     }
 }

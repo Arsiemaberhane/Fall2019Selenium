@@ -3,8 +3,8 @@ package com.automation.tests.day1;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+public class MyFirstSeleniumScript {
 
-public class MyfirstseleniumScript {
     public static void main(String[] args) {
         //setup chromedriver
         WebDriverManager.chromedriver().setup();
@@ -14,4 +14,3 @@ public class MyfirstseleniumScript {
         driver.get("http://google.com");
     }
 }
-

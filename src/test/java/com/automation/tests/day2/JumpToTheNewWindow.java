@@ -1,24 +1,31 @@
 package com.automation.tests.day2;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Set;
 
-public class JumpToNewWindow {
-    public static void main(String[] args) throws InterruptedException {
+public class JumpToTheNewWindow {
+
+    public static void main(String[] args) throws Exception{
         WebDriverManager.chromedriver().setup();
+
         WebDriver driver = new ChromeDriver();
+
         driver.get("http://practice.cybertekschool.com/open_new_tab");
+
         Thread.sleep(5000);
+
         //every window has some id, this id calls window handle
         //based on window handle, we can switch in between windows
         String windowHandle = driver.getWindowHandle();
+
         System.out.println(windowHandle);
         //getWindowHandles() - returns id's of all currently opened windows
         //Set - doesn't allow duplicates
+
         Set<String> windowHandles = driver.getWindowHandles();
+
         System.out.println(windowHandles);
         System.out.println("BEFORE SWITCH :"+driver.getCurrentUrl());
         //since we have all windows
@@ -32,8 +39,12 @@ public class JumpToNewWindow {
             }
         }
         System.out.println("AFTER SWITCH :"+driver.getCurrentUrl());
-        driver.close();
+        // break until 5:02
+
+//        driver.close();
+        driver.quit();
     }
+
     /**
      *
      * This method helps to switch in between windows based on page title
@@ -50,5 +61,4 @@ public class JumpToNewWindow {
         }
     }
 }
-
 

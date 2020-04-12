@@ -1,9 +1,8 @@
 package com.automation.tests.day5;
-
 import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -29,7 +28,7 @@ public class RadioButtons {
             //<input type="radio" id="red" name="color">
             String id = radioButton.getAttribute("id");
 
-            //return true if button already clicked
+            //returns true if button already clicked
             boolean isSelected = radioButton.isSelected();
             System.out.println(id+" is selected? "+isSelected);
 
@@ -44,6 +43,7 @@ public class RadioButtons {
             } else {
                 System.out.println("Button is disabled, not clicked :: "+id);
             }
+            System.out.println();
         }
 
         driver.quit();
